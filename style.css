@@ -8,7 +8,7 @@ body {
     padding: 1rem;
   }
 :root {
-    --color-accent: oklch(65% 25% 50);
+    --color-accent: oklch(45% 30% 50);
   }
 
 nav {
