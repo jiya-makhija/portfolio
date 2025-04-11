@@ -70,3 +70,11 @@ button {
   grid-row: span 3;
   padding: 1em;
 }
+h1 {
+  font-size: 300%;
+
+  h2, h3 {
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+}
