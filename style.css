@@ -56,3 +56,11 @@ button {
   box-sizing: border-box;
 }
 
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1.5em;
+  max-width: 100ch;
+  margin: auto;
+  padding-block: 1em;
+}
