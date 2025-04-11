@@ -64,3 +64,9 @@ button {
   margin: auto;
   padding-block: 1em;
 }
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  padding: 1em;
+}
