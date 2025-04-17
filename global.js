@@ -24,7 +24,7 @@ document.body.prepend(nav);
 
 for (let p of pages) {
   url = !url.startsWith('http') ? BASE_PATH + url : url;
-  let title = p.title;
+  // let title = p.title;
   nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
 }
 
