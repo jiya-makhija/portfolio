@@ -3,14 +3,19 @@ console.log('IT’S ALIVE!');
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
+const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+  ? "/"
+  : "/portfolio/";
 
+
+  /*
 const navLinks = $$("nav a");
 
 let currentLink = navLinks.find(
   (a) => a.host === location.host && a.pathname === location.pathname
 );
 currentLink?.classList.add('current');
-
+*/
 let pages = [
   { url: '', title: 'Home' },
   { url: 'projects/', title: 'Projects' },
@@ -28,6 +33,3 @@ for (let p of pages) {
   nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
 }
 
-const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-  ? "/"
-  : "/portfolio/";
