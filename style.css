@@ -5,10 +5,12 @@ html {
 .color-scheme {
   position: absolute;
   top: 1rem;
-  right: 2.5rem;;
+  right: 1rem;
   font-size: 80%;
   font-family: inherit;
-  margin-left: auto; 
+  background-color: Canvas;
+  padding: 0.2em 0.5em;
+  z-index: 999;
 }
 
 body {
