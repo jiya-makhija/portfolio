@@ -9,6 +9,9 @@ body {
     max-width: 100ch;
     margin-inline: auto;
     padding: 1rem;
+    background-color: Canvas;
+    color: CanvasText;
+    }
   }
 :root {
     --color-accent: oklch(45% 30% 50);
