@@ -66,3 +66,11 @@ document.body.insertAdjacentHTML(
   </label>
   `
 );
+
+const select = document.querySelector('.color-scheme select');
+
+select.addEventListener('input', function (event) {
+  const selected = event.target.value;
+  console.log('color scheme changed to', selected);
+  document.documentElement.style.setProperty('color-scheme', selected);
+});
