@@ -120,3 +120,12 @@ hr {
   border-top: 2px solid #ccc;
   margin: 1em 0;
 }
+html.auto {
+  color-scheme: light dark;
+}
+html.light {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
