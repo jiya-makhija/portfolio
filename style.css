@@ -31,6 +31,8 @@ nav {
   --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   margin-bottom: 1rem;
+  padding-right: 0.8em;
+  flex-wrap: wrap;
   border-bottom: 1px solid var(--border-color);
   }
   
