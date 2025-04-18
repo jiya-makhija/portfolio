@@ -12,7 +12,7 @@ body {
     background-color: Canvas;
     color: CanvasText;
     }
-  }
+
 :root {
     --color-accent: oklch(45% 30% 50);
   }
