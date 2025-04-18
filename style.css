@@ -120,12 +120,17 @@ hr {
   border-top: 2px solid #ccc;
   margin: 1em 0;
 }
-html.auto {
-  color-scheme: light dark;
+html.light body {
+  background-color: white;
+  color: black;
 }
-html.light {
-  color-scheme: light;
+
+html.dark body {
+  background-color: #121212;
+  color: white;
 }
-html.dark {
-  color-scheme: dark;
+
+html.auto body {
+  background-color: Canvas;
+  color: CanvasText;
 }
