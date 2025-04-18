@@ -49,6 +49,21 @@ body {
     background-color: Canvas;
     color: CanvasText;
     }
+    
+html.light body {
+  background-color: white;
+  color: black;
+}
+
+html.dark body {
+  background-color: #121212;
+  color: white;
+}
+
+html.auto body {
+  background-color: Canvas;
+  color: CanvasText;
+}
 
 :root {
     --color-accent: oklch(45% 30% 50);
@@ -143,18 +158,4 @@ hr {
   border: none;
   border-top: 2px solid #ccc;
   margin: 1em 0;
-}
-html.light body {
-  background-color: white;
-  color: black;
-}
-
-html.dark body {
-  background-color: #121212;
-  color: white;
-}
-
-html.auto body {
-  background-color: Canvas;
-  color: CanvasText;
 }
