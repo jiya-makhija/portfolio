@@ -8,6 +8,7 @@ html {
   right: 2.5rem;;
   font-size: 80%;
   font-family: inherit;
+  margin-left: auto; 
 }
 
 body {
@@ -32,6 +33,7 @@ nav {
   display: flex;
   margin-bottom: 1rem;
   padding-right: 8rem;
+  justify-content: space-between;
   flex-wrap: wrap;
   border-bottom: 1px solid var(--border-color);
   }
