@@ -12,6 +12,11 @@ html {
   padding: 0.2em 0.5em;
   z-index: 999;
 }
+.color-scheme select {
+  background-color: Canvas;
+  color: CanvasText;
+  border: 1px solid oklch(80% 3% 200 / 30%);
+}
 
 body {
     /* Set line height to 1.5 times the font size
