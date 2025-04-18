@@ -18,6 +18,25 @@ html {
   border: 1px solid oklch(80% 3% 200 / 30%);
 }
 
+html.light .color-scheme,
+html.light .color-scheme select {
+  background-color: white;
+  color: black;
+}
+
+html.dark .color-scheme,
+html.dark .color-scheme select {
+  background-color: #121212;
+  color: white;
+}
+
+html.auto .color-scheme,
+html.auto .color-scheme select {
+  background-color: Canvas;
+  color: CanvasText;
+}
+
+
 body {
     /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
