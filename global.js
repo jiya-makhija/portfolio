@@ -1,5 +1,22 @@
 console.log("IT’S ALIVE!");
 
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const autoLabel = prefersDark ? "Automatic (Dark)" : "Automatic (Light)";
+
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  `
+  <label class="color-scheme">
+    Theme:
+    <select>
+      <option value="light dark">${autoLabel}</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </label>
+  `
+);
+
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
