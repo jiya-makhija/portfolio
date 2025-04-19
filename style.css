@@ -114,14 +114,16 @@ form button {
 
 input,
 textarea,
-button,
-select {
+select,
+button {
   margin: 0;
   padding: 0.4em;
   font: inherit;
   box-sizing: border-box;
-  border: 1px solid #ccc;
   border-radius: 0.2em;
+  border: 1px solid #ccc;
+  background-color: Canvas;
+  color: CanvasText;
 }
 
 html.light input,
@@ -141,6 +143,7 @@ html.dark button {
   color: white;
   border: 1px solid #666;
 }
+
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
