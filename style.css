@@ -2,23 +2,6 @@ html {
   color-scheme: light dark;
 }
 
-.color-scheme {
-  position: absolute;
-  top: 1rem;
-  right: 2.5rem;
-  font-size: 80%;
-  font-family: inherit;
-  background-color: Canvas;
-  padding: 0.2em 0.5em;
-  z-index: 999;
-}
-
-.color-scheme select {
-  background-color: Canvas;
-  color: CanvasText;
-  border: 1px solid oklch(80% 3% 200 / 30%);
-}
-
 html.light .color-scheme,
 html.light .color-scheme select {
   background-color: white;
@@ -80,11 +63,11 @@ nav {
   }
 
 nav a {
-    flex: 1;
-    text-align: center;
-    padding: 0.5em;
-    text-decoration: none;
-    color: inherit;
+  flex: 1;
+  text-align: center;
+  padding: 0.5em;
+  text-decoration: none;
+  color: inherit;
   }
 
 nav a.current {
@@ -182,4 +165,21 @@ hr {
   border: none;
   border-top: 2px solid #ccc;
   margin: 1em 0;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 2.5rem;
+  font-size: 80%;
+  font-family: inherit;
+  background-color: Canvas;
+  padding: 0.2em 0.5em;
+  z-index: 999;
+}
+
+.color-scheme select {
+  background-color: Canvas;
+  color: CanvasText;
+  border: 1px solid oklch(80% 3% 200 / 30%);
 }
