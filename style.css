@@ -30,6 +30,15 @@ html.dark .color-scheme select {
   color: white;
 }
 
+html.light body {
+  background-color: white;
+  color: black;
+}
+
+html.dark body {
+  background-color: #121212;
+  color: white;
+}
 
 body {
     /* Set line height to 1.5 times the font size
