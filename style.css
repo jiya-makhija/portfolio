@@ -112,19 +112,6 @@ form button {
   grid-column: 1 / -1;
 }
 
-input,
-textarea,
-select,
-button {
-  margin: 0;
-  padding: 0.4em;
-  font: inherit;
-  box-sizing: border-box;
-  border-radius: 0.2em;
-  border: 1px solid #ccc;
-  background-color: Canvas;
-  color: CanvasText;
-}
 
 html.light input,
 html.light textarea,
@@ -142,6 +129,19 @@ html.dark button {
   background-color: #1f1f1f;
   color: white;
   border: 1px solid #666;
+}
+input,
+textarea,
+select,
+button {
+  margin: 0;
+  padding: 0.4em;
+  font: inherit;
+  box-sizing: border-box;
+  border-radius: 0.2em;
+  border: 1px solid #ccc;
+  background-color: Canvas;
+  color: CanvasText;
 }
 
 .projects {
