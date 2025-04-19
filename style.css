@@ -140,6 +140,8 @@ button {
   box-sizing: border-box;
   border-radius: 0.2em;
   border: 1px solid #ccc;
+  background-color: Canvas;
+  color: CanvasText;
 }
 
 .projects {
