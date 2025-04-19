@@ -1,7 +1,7 @@
 console.log("IT’S ALIVE!");
 
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-const autoLabel = prefersDark ? "Automatic (Dark)" : "Automatic (Light)";
+const autoLabel = "Automatic";
 
 document.body.insertAdjacentHTML(
   'afterbegin',
