@@ -27,7 +27,7 @@ html.light .color-scheme select {
 
 html.dark .color-scheme,
 html.dark .color-scheme select {
-  background-color: #121212;
+  background-color: black;
   color: white;
 }
 
