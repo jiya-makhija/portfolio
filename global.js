@@ -69,21 +69,16 @@ document.body.insertAdjacentHTML(
 
 const select = document.querySelector('.color-scheme select');
 
-function setColorScheme(value) {
-  document.documentElement.classList.remove("light", "dark", "auto");
+select.addEventListener('input', function (event) {
+  const value = event.target.value;
+  console.log("color scheme changed to:", value);
+
+  document.documentElement.classList.remove('light', 'dark', 'auto');
 
   if (value === "light dark") {
-    document.documentElement.classList.add("auto");
+    document.documentElement.classList.add('auto');
   } else {
-    document.documentElement.classList.add(value);
+    document.documentElement.classList.add(value); // "light" or "dark"
   }
+});
 
-  localStorage.colorScheme = value; 
-  select.value = value;       
-}
-
-if ("colorScheme" in localStorage) {
-  setColorScheme(localStorage.colorScheme);
-} else {
-  setColorScheme("light dark");
-}
