@@ -117,17 +117,16 @@ html.light input,
 html.light textarea,
 html.light select,
 html.light button {
-  background-color: Canvas;
-  color: CanvasText;
+  background-color: white;
+  color: black;
 }
-
 
 html.dark input,
 html.dark textarea,
 html.dark select,
 html.dark button {
-  background-color: Canvas;
-  color: CanvasText;
+  background-color: #1f1f1f;
+  color: white;
 }
 
 input,
