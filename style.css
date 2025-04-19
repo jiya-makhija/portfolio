@@ -117,7 +117,7 @@ html.light input,
 html.light textarea,
 html.light select,
 html.light button {
-  background-color: inherit;
+  background-color: white;
   color: black;
 }
 
@@ -129,6 +129,13 @@ html.dark button {
   color: white;
 }
 
+html.light button {
+  background-color: #eee;
+}
+
+html.dark button {
+  background-color: #666;
+}
 
 input,
 textarea,
