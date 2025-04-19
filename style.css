@@ -12,24 +12,46 @@ html {
   padding: 0.2em 0.5em;
   z-index: 999;
 }
-
 .color-scheme select {
   background-color: Canvas;
   color: CanvasText;
   border: 1px solid oklch(80% 3% 200 / 30%);
 }
 
+html.light .color-scheme,
+html.light .color-scheme select {
+  background-color: white;
+  color: black;
+}
+
+html.dark .color-scheme,
+html.dark .color-scheme select {
+  background-color: #121212;
+  color: white;
+}
+
+html.light body {
+  background-color: white;
+  color: black;
+}
+
+html.dark body {
+  background-color: #121212;
+  color: white;
+}
 
 body {
     /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
        */
-  position: relative;
-  font: 100%/1.5 system-ui;
-  max-width: 100ch;
-  margin-inline: auto;
-  padding: 1rem;
-  }
+    position: relative;
+    font: 100%/1.5 system-ui;
+    max-width: 100ch;
+    margin-inline: auto;
+    padding: 1rem;
+    background-color: Canvas;
+    color: CanvasText;
+    }
     
 html.light body {
   background-color: white;
@@ -93,29 +115,6 @@ select {
   padding: 0.4em;
   font: inherit;
   box-sizing: border-box;
-  background-color: Canvas;
-  color: CanvasText;
-  border: 1px solid oklch(80% 3% 200 / 30%);
-}
-
-/* Light mode override */
-html.light input,
-html.light textarea,
-html.light button,
-html.light select {
-  background-color: white;
-  color: black;
-  border-color: oklch(70% 3% 200 / 30%);
-}
-
-/* Dark mode override */
-html.dark input,
-html.dark textarea,
-html.dark button,
-html.dark select {
-  background-color: #1f1f1f;
-  color: white;
-  border-color: oklch(60% 3% 200 / 30%);
 }
 
 .projects {
