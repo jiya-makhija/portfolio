@@ -14,7 +14,6 @@ html {
 }
 
 .color-scheme select {
-  right: 2.5rem;
   background-color: Canvas;
   color: CanvasText;
   border: 1px solid oklch(80% 3% 200 / 30%);
