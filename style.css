@@ -1,12 +1,9 @@
 html {
-  font: inherit;
   color-scheme: light dark;
-  background-color: Canvas;
-  color: CanvasText;
 }
 
 .color-scheme {
-  position: fixed;
+  position: absolute;
   top: 1rem;
   right: 1rem;
   font-size: 80%;
