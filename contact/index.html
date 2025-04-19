@@ -19,20 +19,20 @@
   <form action="mailto:jmakhija@ucsd.edu" method="GET" enctype="text/plain">
     <label>
       Your Email:
-      <input name="email" type="email">
+      <input name="email" type="email" required>
     </label>
-    <br><br>
+  
     <label>
       Subject:
-      <input name="subject">
+      <input name="subject" required>
     </label>
-    <br><br>
+  
     <label>
       Message:
-      <textarea name="body"></textarea>
+      <textarea name="body" required></textarea>
     </label>
-    <br><br>
-    <button>Submit</button>
+  
+    <button type="submit">Submit</button>
   </form>
   <script type="module" src="/portfolio/global.js"></script>
 </body>
