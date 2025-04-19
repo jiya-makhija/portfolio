@@ -117,6 +117,8 @@ select {
   padding: 0.4em;
   font: inherit;
   box-sizing: border-box;
+  background-color: inherit;
+  color: inherit;
 }
 
 html.light input,
