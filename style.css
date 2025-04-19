@@ -119,6 +119,19 @@ select {
   box-sizing: border-box;
 }
 
+html.light input,
+html.light textarea,
+html.light button {
+  background-color: white;
+  color: black;
+}
+
+html.dark input,
+html.dark textarea,
+html.dark button {
+  background-color: #1f1f1f;
+  color: white;
+}
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
