@@ -9,6 +9,7 @@ html {
   font-size: 80%;
   font-family: inherit;
   background-color: Canvas;
+  color: CanvasText;
   padding: 0.2em 0.5em;
   z-index: 999;
 }
@@ -17,6 +18,14 @@ html {
   color: CanvasText;
   border: 1px solid oklch(80% 3% 200 / 30%);
 }
+
+html.light {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
 
 html.light .color-scheme,
 html.light .color-scheme select {
