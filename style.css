@@ -124,6 +124,7 @@ html.light textarea,
 html.light button {
   background-color: white;
   color: black;
+  border-color: oklch(70% 3% 200 / 30%);
 }
 
 html.dark input,
@@ -131,7 +132,9 @@ html.dark textarea,
 html.dark button {
   background-color: #1f1f1f;
   color: white;
+  border-color: oklch(60% 3% 200 / 30%);
 }
+
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
