@@ -30,12 +30,6 @@ html.dark .color-scheme select {
   color: white;
 }
 
-html.auto .color-scheme,
-html.auto .color-scheme select {
-  background-color: Canvas;
-  color: CanvasText;
-}
-
 
 body {
     /* Set line height to 1.5 times the font size
@@ -58,11 +52,6 @@ html.light body {
 html.dark body {
   background-color: #121212;
   color: white;
-}
-
-html.auto body {
-  background-color: Canvas;
-  color: CanvasText;
 }
 
 :root {
