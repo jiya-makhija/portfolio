@@ -29,8 +29,6 @@ body {
   max-width: 100ch;
   margin-inline: auto;
   padding: 1rem;
-  background-color: inherit;
-  color: inherit;
   }
     
 html.light body {
