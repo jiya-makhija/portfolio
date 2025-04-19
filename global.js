@@ -3,6 +3,39 @@ console.log("IT’S ALIVE!");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const autoLabel = prefersDark ? "Automatic (Dark)" : "Automatic (Light)";
 
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  `
+  <label class="color-scheme">
+    Theme:
+    <select>
+      <option value="light dark">${autoLabel}</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </label>
+  `
+);
+
+const select = document.querySelector('.color-scheme select');
+
+if ("colorScheme" in localStorage) {
+  const saved = localStorage.colorScheme;
+  select.value = saved;
+  if (saved !== "light dark") {
+    document.documentElement.classList.add(saved);
+  }
+}
+
+select.addEventListener('input', function (event) {
+  const value = event.target.value;
+  document.documentElement.classList.remove("light", "dark");
+  if (value !== "light dark") {
+    document.documentElement.classList.add(value);
+  }
+  localStorage.colorScheme = value;
+});
+
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -11,15 +44,6 @@ function $$(selector, context = document) {
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
   ? "/"
   : "/portfolio/";
-
-/*
-const navLinks = $$("nav a");
-
-let currentLink = navLinks.find(
-  (a) => a.host === location.host && a.pathname === location.pathname
-);
-currentLink?.classList.add('current');
-*/
 
 let pages = [
   { url: '', title: 'Home' },
@@ -35,7 +59,6 @@ document.body.prepend(nav);
 for (let p of pages) {
   let url = p.url;
   let title = p.title;
-
   url = !url.startsWith('http') ? BASE_PATH + url : url;
 
   let a = document.createElement('a');
@@ -53,32 +76,3 @@ for (let p of pages) {
 
   nav.append(a);
 }
-document.body.insertAdjacentHTML(
-  'afterbegin',
-  `
-  <label class="color-scheme">
-    Theme:
-    <select>
-      <option value="light dark">${autoLabel}</option>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-    </select>
-  </label>
-  `
-);
-
-const select = document.querySelector('.color-scheme select');
-
-select.addEventListener('input', function (event) {
-  const value = event.target.value;
-  console.log("color scheme changed to:", value);
-
-  document.documentElement.classList.remove('light', 'dark', 'auto');
-
-  if (value === "light dark") {
-    document.documentElement.classList.add('auto');
-  } else {
-    document.documentElement.classList.add(value); // "light" or "dark"
-  }
-});
-
