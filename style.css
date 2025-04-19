@@ -9,7 +9,6 @@ html {
   font-size: 80%;
   font-family: inherit;
   background-color: Canvas;
-  color: CanvasText;
   padding: 0.2em 0.5em;
   z-index: 999;
 }
@@ -18,14 +17,6 @@ html {
   color: CanvasText;
   border: 1px solid oklch(80% 3% 200 / 30%);
 }
-
-html.light {
-  color-scheme: light;
-}
-html.dark {
-  color-scheme: dark;
-}
-
 
 html.light .color-scheme,
 html.light .color-scheme select {
@@ -39,15 +30,12 @@ html.dark .color-scheme select {
   color: white;
 }
 
-html.light body {
-  background-color: white;
-  color: black;
+html.auto .color-scheme,
+html.auto .color-scheme select {
+  background-color: Canvas;
+  color: CanvasText;
 }
 
-html.dark body {
-  background-color: #121212;
-  color: white;
-}
 
 body {
     /* Set line height to 1.5 times the font size
@@ -72,6 +60,11 @@ html.dark body {
   color: white;
 }
 
+html.auto body {
+  background-color: Canvas;
+  color: CanvasText;
+}
+
 :root {
     --color-accent: oklch(45% 30% 50);
   }
@@ -85,7 +78,7 @@ nav {
   flex-wrap: wrap;
   border-bottom: 1px solid var(--border-color);
   }
-  
+
 nav a {
     flex: 1;
     text-align: center;
@@ -93,7 +86,7 @@ nav a {
     text-decoration: none;
     color: inherit;
   }
-  
+
 nav a.current {
   border-bottom: 0.4em solid var(--border-color);
   padding-bottom: 0.1em;
