@@ -168,7 +168,7 @@ hr {
 }
 
 .color-scheme {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 2.5rem;
   font-size: 80%;
