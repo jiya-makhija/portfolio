@@ -113,30 +113,31 @@ input,
 textarea,
 button,
 select {
-  margin: 0; 
+  margin: 0;
   padding: 0.4em;
   font: inherit;
   box-sizing: border-box;
-  background-color: inherit;
-  color: inherit;
+  border: 1px solid #ccc;
+  border-radius: 0.2em;
 }
 
 html.light input,
 html.light textarea,
+html.light select,
 html.light button {
   background-color: white;
   color: black;
-  border-color: oklch(70% 3% 200 / 30%);
+  border: 1px solid #ccc;
 }
 
 html.dark input,
 html.dark textarea,
+html.dark select,
 html.dark button {
   background-color: #1f1f1f;
   color: white;
-  border-color: oklch(60% 3% 200 / 30%);
+  border: 1px solid #666;
 }
-
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
