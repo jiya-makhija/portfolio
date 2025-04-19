@@ -3,7 +3,7 @@ console.log("IT’S ALIVE!");
 const autoLabel = "Automatic";
 
 document.body.insertAdjacentHTML(
-  'afterbegin',
+  "afterbegin",
   `
   <label class="color-scheme">
     Theme:
@@ -16,7 +16,7 @@ document.body.insertAdjacentHTML(
   `
 );
 
-const select = document.querySelector('.color-scheme select');
+const select = document.querySelector(".color-scheme select");
 
 function setColorScheme(value) {
   document.documentElement.classList.remove("light", "dark");
@@ -41,11 +41,9 @@ select.addEventListener("input", (event) => {
   setColorScheme(event.target.value);
 });
 
-
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
-
 
 const BASE_PATH =
   location.hostname === "localhost" || location.hostname === "127.0.0.1"
