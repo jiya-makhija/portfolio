@@ -29,6 +29,8 @@ body {
   max-width: 100ch;
   margin-inline: auto;
   padding: 1rem;
+  background-color: inherit;
+  color: inherit;
   }
     
 html.light body {
@@ -117,6 +119,7 @@ html.dark select {
   color: white;
   border-color: oklch(60% 3% 200 / 30%);
 }
+
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
