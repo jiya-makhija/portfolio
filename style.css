@@ -39,8 +39,8 @@ html.light body {
 }
 
 html.dark body {
-  background-color: black;
-  color: white;
+  background-color: Canvas;
+  color: CanvasText;
 }
 
 html.auto body {
