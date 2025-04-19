@@ -10,8 +10,8 @@ html.light .color-scheme select {
 
 html.dark .color-scheme,
 html.dark .color-scheme select {
-  background-color: black;
-  color: white;
+  background-color: Canvas;
+  color: CanvasText;
 }
 
 html.auto .color-scheme,
