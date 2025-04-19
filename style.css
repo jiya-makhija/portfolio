@@ -112,7 +112,7 @@ form button {
   grid-column: 1 / -1;
 }
 
-/*
+
 html.light input,
 html.light textarea,
 html.light select,
@@ -129,7 +129,7 @@ html.dark button {
   background-color: Canvas;
   color: CanvasText;
 }
-*/
+
 input,
 textarea,
 select,
@@ -140,8 +140,6 @@ button {
   box-sizing: border-box;
   border-radius: 0.2em;
   border: 1px solid #ccc;
-  background-color: Canvas;
-  color: CanvasText;
 }
 
 .projects {
