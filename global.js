@@ -108,10 +108,14 @@ export function renderProjects(projects, container, headingLevel = 'h2') {
     const heading = document.createElement(headingLevel);
     heading.textContent = project.title;
 
+    const img = document.createElement('img');
+    img.src = project.image;
+    img.alt = project.title;
+
     const description = document.createElement('p');
     description.textContent = project.description;
 
-    article.append(heading, description);
-    container.appendChild(article);
+    article.append(heading, img, description);
+    container.append(article);
   }
 }
