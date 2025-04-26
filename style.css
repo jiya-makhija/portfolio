@@ -183,3 +183,27 @@ hr {
   color: CanvasText;
   border: 1px solid oklch(80% 3% 200 / 30%);
 }
+
+#profile-stats h2 {
+  margin-bottom: 0.5em;
+}
+
+.github-grid {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.github-grid dt {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: gray;
+}
+
+.github-grid dd {
+  font-size: 1.5em;
+  margin: 0;
+}
