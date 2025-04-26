@@ -14,6 +14,7 @@ const profileStats = document.querySelector('#profile-stats');
 
 if (profileStats) {
     profileStats.innerHTML = `
+    <h2>GitHub Stats</h2>
     <dl class="github-grid">
     <dt>Followers:</dt><dd>${githubData.followers}</dd>
     <dt>Following:</dt><dd>${githubData.following}</dd>
