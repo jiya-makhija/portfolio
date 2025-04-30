@@ -207,3 +207,9 @@ hr {
   font-size: 1.5em;
   margin: 0;
 }
+
+.project-year {
+  color: gray;
+  margin-top: 0.2em;
+  font-size: 0.9em;
+}
