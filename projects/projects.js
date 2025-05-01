@@ -9,34 +9,54 @@ if (title) title.textContent = `${projects.length} Projects`;
 
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
-let rolledData = d3.rollups(
-  projects,
-  (v) => v.length,
-  (d) => d.year
-);
+let query = '';
+let searchInput = document.querySelector('.searchBar');
 
-let data = rolledData.map(([year, count]) => {
-  return { value: count, label: year };
-});
+function renderPieChart(projectsGiven) {
+  let rolledData = d3.rollups(
+    projectsGiven,
+    (v) => v.length,
+    (d) => d.year
+  );
 
-let sliceGenerator = d3.pie().value((d) => d.value);
-let arcData = sliceGenerator(data);
+  let data = rolledData.map(([year, count]) => {
+    return { value: count, label: year };
+  });
 
-let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
-let colors = d3.scaleOrdinal(d3.schemeTableau10);
+  let sliceGenerator = d3.pie().value((d) => d.value);
+  let arcData = sliceGenerator(data);
+  let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
+  let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
-arcData.forEach((d, i) => {
-  d3.select('#projects-pie-plot')
-    .append('path')
-    .attr('d', arcGenerator(d))
-    .attr('fill', colors(i));
-});
+  let svg = d3.select('#projects-pie-plot');
+  svg.selectAll('path').remove();
 
-let legend = d3.select('.legend');
+  arcData.forEach((d, i) => {
+    svg
+      .append('path')
+      .attr('d', arcGenerator(d))
+      .attr('fill', colors(i));
+  });
 
-data.forEach((d, idx) => {
-  legend
-    .append('li')
-    .attr('style', `--color: ${colors(idx)}`)
-    .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
+  let legend = d3.select('.legend');
+  legend.selectAll('li').remove();
+
+  data.forEach((d, idx) => {
+    legend
+      .append('li')
+      .attr('style', `--color: ${colors(idx)}`)
+      .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
+  });
+}
+
+renderPieChart(projects);
+
+searchInput.addEventListener('change', (event) => {
+  query = event.target.value;
+  let filteredProjects = projects.filter((project) => {
+    let values = Object.values(project).join('\n').toLowerCase();
+    return values.includes(query.toLowerCase());
+  });
+  renderProjects(filteredProjects, projectsContainer, 'h2');
+  renderPieChart(filteredProjects);
 });
