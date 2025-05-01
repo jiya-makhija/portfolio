@@ -226,7 +226,7 @@ hr {
   gap: 1em;
   margin: 2em 0;
   padding: 1em;
-  border: 1px solid lightgray;
+  border: 1px solid gray;
   border-radius: 0.5em;
   background-color: inherit;
 }
