@@ -220,28 +220,32 @@ hr {
   overflow: visible;
 }
 
+.pie-legend-container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  margin-top: 2em;
+}
+
 .legend {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
-  gap: 1em;
-  margin: 2em 0;
-  padding: 1em;
+  gap: 0.5em;
   border: 1px solid gray;
-  border-radius: 0.5em;
-  background-color: inherit;
+  padding: 1em;
 }
 
 .legend li {
   display: flex;
   align-items: center;
   gap: 0.5em;
-  color: var(--color);
 }
 
-.swatch {
+.legend .swatch {
   width: 1em;
   height: 1em;
   background-color: var(--color);
-  border-radius: 0.25em;
+  border-radius: 0.2em;
   display: inline-block;
 }
