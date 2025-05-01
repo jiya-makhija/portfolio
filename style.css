@@ -228,7 +228,7 @@ hr {
   padding: 1em;
   border: 1px solid lightgray;
   border-radius: 0.5em;
-  background-color: white;
+  background-color: Canvas;
 }
 
 .legend li {
