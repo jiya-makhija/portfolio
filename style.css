@@ -251,11 +251,11 @@ hr {
   display: inline-block;
 }
 
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
 #projects-pie-plot path {
   transition: opacity 300ms;
   cursor: pointer;
-}
-
-#projects-pie-plot:has(path:hover) path:not(:hover) {
-  opacity: 0.5;
 }
