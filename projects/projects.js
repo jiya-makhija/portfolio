@@ -1,13 +1,12 @@
 import { fetchJSON, renderProjects } from '../global.js';
-
-const projects = await fetchJSON('../lib/projects.json');
-let projectsContainer = document.querySelector('.projects');
-renderProjects(filteredProjects, container, 'h2');
-
-const title = document.querySelector('.projects-title');
-if (title) title.textContent = `${projects.length} Projects`;
-
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
+
+let projects = await fetchJSON('../lib/projects.json');
+let projectsContainer = document.querySelector('.projects');
+renderProjects(projects, projectsContainer, 'h2');
+
+let title = document.querySelector('.projects-title');
+if (title) title.textContent = `${projects.length} Projects`;
 
 let query = '';
 let searchInput = document.querySelector('.searchBar');
@@ -57,6 +56,7 @@ searchInput.addEventListener('change', (event) => {
     let values = Object.values(project).join('\n').toLowerCase();
     return values.includes(query.toLowerCase());
   });
+
   renderProjects(filteredProjects, projectsContainer, 'h2');
   renderPieChart(filteredProjects);
 });
