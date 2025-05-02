@@ -213,6 +213,13 @@ hr {
   margin-top: 0.2em;
   font-size: 0.9em;
 }
+.pie-legend-container {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
 
 #projects-pie-plot {
   max-width: 20em;
@@ -220,20 +227,13 @@ hr {
   overflow: visible;
 }
 
-.pie-legend-container {
-  display: flex;
-  align-items: center;
-  gap: 2em;
-  margin-top: 2em;
-}
-
 .legend {
-  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
-  gap: 0.5em;
-  border: 1px solid gray;
+  gap: 1em;
   padding: 1em;
+  border: 1px solid var(--color-neutral-80);
+  flex: 1;
 }
 
 .legend li {
@@ -245,7 +245,8 @@ hr {
 .legend .swatch {
   width: 1em;
   height: 1em;
+  aspect-ratio: 1 / 1;
   background-color: var(--color);
-  border-radius: 0.2em;
+  border-radius: 50%;
   display: inline-block;
 }
