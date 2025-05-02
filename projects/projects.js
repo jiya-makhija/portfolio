@@ -50,7 +50,7 @@ function renderPieChart(projectsGiven) {
 
 renderPieChart(projects);
 
-searchInput.addEventListener('change', (event) => {
+searchInput.addEventListener('input', (event) => {
   query = event.target.value;
   let filteredProjects = projects.filter((project) => {
     let values = Object.values(project).join('\n').toLowerCase();
