@@ -253,6 +253,7 @@ hr {
 
 #projects-pie-plot path {
   transition: opacity 300ms;
+  cursor: pointer;
 }
 
 #projects-pie-plot:has(path:hover) path:not(:hover) {
