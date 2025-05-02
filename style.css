@@ -250,3 +250,11 @@ hr {
   border-radius: 50%;
   display: inline-block;
 }
+
+#projects-pie-plot path {
+  transition: opacity 300ms;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
