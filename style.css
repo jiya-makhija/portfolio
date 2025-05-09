@@ -269,7 +269,7 @@ hr {
   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   gap: 2rem;
   padding: 2rem;
-  background-color: var(--color-surface, Canvas);
+  background-color: var(--color-surface, inherit);
   border: 1px solid var(--color-neutral-80, #ccc);
   border-radius: 6px;
   margin-top: 2rem;
