@@ -264,9 +264,9 @@ hr {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   gap: 1.5rem 2rem;
-  background: white;
+  background: var(--color);
   padding: 2rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-neutral-80);
   border-radius: 6px;
   margin-top: 2rem;
 }
