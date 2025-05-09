@@ -125,12 +125,18 @@ function renderScatterPlot(data, commits) {
   const dots = svg.append('g').attr('class', 'dots');
 
   dots.selectAll('circle')
-    .data(commits)
-    .join('circle')
-    .attr('cx', d => xScale(d.datetime))
-    .attr('cy', d => yScale(d.hourFrac))
-    .attr('r', 5)
-    .attr('fill', 'steelblue');
+  .data(commits)
+  .join('circle')
+  .attr('cx', d => xScale(d.datetime))
+  .attr('cy', d => yScale(d.hourFrac))
+  .attr('r', 5)
+  .attr('fill', 'steelblue')
+  .on('mouseenter', (event, commit) => {
+    renderTooltipContent(commit);
+  })
+  .on('mouseleave', () => {
+    renderTooltipContent({});
+  });
 }
 let data = await loadData();
 let commits = processCommits(data);
