@@ -318,6 +318,12 @@ html.light .tooltip {
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
 }
+
+html.auto .tooltip {
+  background-color: Canvas;
+  color: CanvasText;
+}
+
 .tooltip {
   position: fixed;
   top: 1em;
