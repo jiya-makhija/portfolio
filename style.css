@@ -259,25 +259,23 @@ hr {
   transition: opacity 300ms;
   cursor: pointer;
 }
+
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
-  gap: 1em 2em;
-  margin-block: 2em;
-  padding-block: 1em;
-  border-block: 1px solid var(--text-color);
+  gap: 2rem;
+  margin-block: 2rem;
 }
 
 .stats dt {
-  font-size: 0.75em;
-  font-weight: 500;
-  color: var(--text-color-muted, #888);
+  font-size: 0.8rem;
   text-transform: uppercase;
+  color: #888;
   letter-spacing: 0.05em;
 }
 
 .stats dd {
-  font-size: 2em;
-  margin: 0;
+  font-size: 2rem;
   font-weight: 600;
+  margin: 0;
 }
