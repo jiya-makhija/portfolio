@@ -259,3 +259,25 @@ hr {
   transition: opacity 300ms;
   cursor: pointer;
 }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  margin-block: 2rem;
+}
+
+.stats dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.stats dd {
+  font-size: 2rem;
+  margin: 0;
+}
