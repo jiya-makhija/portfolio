@@ -96,7 +96,7 @@ dl.append('dd').text(
     .range([usableArea.bottom, usableArea.top]);
 
   const [minLines, maxLines] = d3.extent(commits, d => d.totalLines);
-  const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([4, 30]);
+  const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([3, 20]);
 
   svg.append('g')
     .attr('class', 'gridlines')
