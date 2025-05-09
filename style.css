@@ -309,12 +309,20 @@ circle:hover {
   transform: scale(1.5);
 }
 
+html.dark .tooltip {
+  background-color: rgba(30, 30, 30, 0.9); 
+  color: CanvasText;
+}
+
+html.light .tooltip {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
 .tooltip {
   position: fixed;
   top: 1em;
   left: 1em;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 0.5em;
   padding: 1em;
