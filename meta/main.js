@@ -70,7 +70,7 @@ dl.append('dd').text(
 function renderScatterPlot(data, commits) {
   const width = 1000;
   const height = 600;
-  const margin = { top: 10, right: 10, bottom: 30, left: 20 };
+  const margin = { top: 10, right: 10, bottom: 30, left: 50 };
 
   const usableArea = {
     top: margin.top,
@@ -81,14 +81,18 @@ function renderScatterPlot(data, commits) {
     height: height - margin.top - margin.bottom,
   };
 
-  const svg = d3
-    .select('#chart')
+  const svg = d3.select('#chart')
     .append('svg')
     .attr('viewBox', `0 0 ${width} ${height}`)
     .style('overflow', 'visible');
 
+  // Add padding to the X domain for space
+  const [startDate, endDate] = d3.extent(commits, d => d.datetime);
+  const paddedStart = d3.timeDay.offset(startDate, -3);
+  const paddedEnd = d3.timeDay.offset(endDate, 3);
+
   const xScale = d3.scaleTime()
-    .domain(d3.extent(commits, d => d.datetime))
+    .domain([paddedStart, paddedEnd])
     .range([usableArea.left, usableArea.right])
     .nice();
 
@@ -97,28 +101,26 @@ function renderScatterPlot(data, commits) {
     .range([usableArea.bottom, usableArea.top]);
 
   const [minLines, maxLines] = d3.extent(commits, d => d.totalLines);
-  const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]);
+  const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([3, 20]);
 
-  const gridlines = svg.append('g')
+  // Add gridlines
+  svg.append('g')
     .attr('class', 'gridlines')
-    .attr('transform', `translate(${usableArea.left}, 0)`);
-  gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
+    .attr('transform', `translate(${usableArea.left}, 0)`)
+    .call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 
-  const xAxis = d3.axisBottom(xScale);
-  const yAxis = d3.axisLeft(yScale)
-    .tickFormat(d => String(d % 24).padStart(2, '0') + ':00');
-
+  // Add axes
   svg.append('g')
     .attr('transform', `translate(0, ${usableArea.bottom})`)
-    .call(xAxis);
-
+    .call(d3.axisBottom(xScale));
   svg.append('g')
     .attr('transform', `translate(${usableArea.left}, 0)`)
-    .call(yAxis);
+    .call(d3.axisLeft(yScale).tickFormat(d => String(d % 24).padStart(2, '0') + ':00'));
+
+  // Sort commits by descending size (so smaller circles draw on top)
+  const sortedCommits = d3.sort(commits, d => -d.totalLines);
 
   const dots = svg.append('g').attr('class', 'dots');
-
-  const sortedCommits = d3.sort(commits, d => -d.totalLines); // largest first
 
   dots.selectAll('circle')
     .data(sortedCommits)
@@ -128,9 +130,9 @@ function renderScatterPlot(data, commits) {
     .attr('r', d => rScale(d.totalLines))
     .attr('fill', 'steelblue')
     .style('fill-opacity', 0.7)
-    .on('mouseenter', (event, commit) => {
+    .on('mouseenter', (event, d) => {
       d3.select(event.currentTarget).style('fill-opacity', 1);
-      renderTooltipContent(commit);
+      renderTooltipContent(d);
       updateTooltipVisibility(true);
       updateTooltipPosition(event);
     })
@@ -139,6 +141,8 @@ function renderScatterPlot(data, commits) {
       updateTooltipVisibility(false);
     });
 }
+
+
 let data = await loadData();
 let commits = processCommits(data);
 renderCommitInfo(data, commits);
