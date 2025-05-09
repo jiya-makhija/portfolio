@@ -1,4 +1,5 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
+let xScale, yScale;
 
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
@@ -67,7 +68,6 @@ dl.append('dd').text(
   )
 );
 
-let xScale, yScale;
 
 }function renderScatterPlot(data, commits) {
   const width = 1000;
@@ -220,8 +220,7 @@ function brushed(event) {
 function isCommitSelected(selection, commit) {
   if (!selection) return false;
 
-  const [x0, y0] = selection[0];
-  const [x1, y1] = selection[1];
+  const [[x0, y0], [x1, y1]] = selection;
 
   const cx = xScale(commit.datetime);
   const cy = yScale(commit.hourFrac);
