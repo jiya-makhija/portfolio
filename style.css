@@ -277,7 +277,7 @@ hr {
   color: #666;
   font-weight: 600;
   letter-spacing: 0.03em;
-  margin-bottom: 0.2rem;
+  /*margin-bottom: 0.2rem; */
 }
 
 .stats dd {
