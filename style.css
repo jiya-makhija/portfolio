@@ -50,6 +50,10 @@ html.auto body {
 
 :root {
     --color-accent: oklch(45% 30% 50);
+    --color-text: CanvasText;
+    --color-surface: Canvas;
+    --color-neutral-60: #666666;
+    --color-neutral-80: #ccc;
   }
 
 nav {
@@ -263,10 +267,10 @@ hr {
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-  gap: 1.5rem 2rem;
-  background: var(--color);
+  gap: 2rem;
   padding: 2rem;
-  border: 1px solid var(--color-neutral-80);
+  background-color: var(--color-surface, Canvas);
+  border: 1px solid var(--color-neutral-80, #ccc);
   border-radius: 6px;
   margin-top: 2rem;
 }
@@ -274,15 +278,15 @@ hr {
 .stats dt {
   font-size: 0.75rem;
   text-transform: uppercase;
-  color: #666;
+  color: var(--color-neutral-60, #666);
   font-weight: 600;
   letter-spacing: 0.03em;
-  /*margin-bottom: 0.2rem; */
+  margin: 0;
 }
 
 .stats dd {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
   margin: 0;
-  color: black;
+  color: var(--color-text, CanvasText);
 }
