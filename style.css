@@ -320,7 +320,6 @@ circle:hover {
   padding: 1em;
   font-size: 0.9rem;
   max-width: 300px;
-  display: none;
 }
 
 .tooltip dt {
@@ -335,4 +334,14 @@ circle:hover {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
+}
+
+dl.info {
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
 }
