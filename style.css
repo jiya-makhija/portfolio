@@ -50,8 +50,8 @@ html.auto body {
 
 :root {
     --color-accent: oklch(45% 30% 50);
-    --color-text: CanvasText;
-    --color-surface: Canvas;
+    --color-text: inherit;
+    --color-surface: inherit;
     --color-neutral-60: #666666;
     --color-neutral-80: #ccc;
   }
