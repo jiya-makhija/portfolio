@@ -320,6 +320,7 @@ circle:hover {
   padding: 1em;
   font-size: 0.9rem;
   max-width: 300px;
+  color: var(--color-text, inherit);
 }
 
 .tooltip dt {
