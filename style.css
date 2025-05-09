@@ -289,3 +289,12 @@ hr {
   margin: 0;
   color: var(--color-text, inherit);
 }
+
+.gridlines line {
+  stroke: var(--color-neutral-80, #ccc);
+  stroke-opacity: 0.3;
+}
+
+.gridlines path {
+  display: none;
+}
