@@ -136,3 +136,20 @@ let data = await loadData();
 let commits = processCommits(data);
 renderCommitInfo(data, commits);
 renderScatterPlot(data, commits);
+
+function renderTooltipContent(commit) {
+  const link = document.getElementById('commit-link');
+  const date = document.getElementById('commit-date');
+  const time = document.getElementById('commit-time');
+  const author = document.getElementById('commit-author');
+  const lines = document.getElementById('commit-lines');
+
+  if (Object.keys(commit).length === 0) return;
+
+  link.href = commit.url;
+  link.textContent = commit.id;
+  date.textContent = commit.datetime.toLocaleDateString('en', { dateStyle: 'full' });
+  time.textContent = commit.datetime.toLocaleTimeString('en');
+  author.textContent = commit.author;
+  lines.textContent = commit.totalLines;
+}
