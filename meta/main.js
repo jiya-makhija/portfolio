@@ -66,8 +66,7 @@ dl.append('dd').text(
     d => d[1]
   )
 );
-}
-function renderScatterPlot(data, commits) {
+}function renderScatterPlot(data, commits) {
   const width = 1000;
   const height = 600;
   const margin = { top: 10, right: 10, bottom: 30, left: 40 };
@@ -97,7 +96,7 @@ function renderScatterPlot(data, commits) {
     .range([usableArea.bottom, usableArea.top]);
 
   const [minLines, maxLines] = d3.extent(commits, d => d.totalLines);
-  const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]);
+  const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([4, 30]);
 
   svg.append('g')
     .attr('class', 'gridlines')
@@ -117,7 +116,7 @@ function renderScatterPlot(data, commits) {
     .call(d3.axisLeft(yScale)
       .tickFormat(d => String(d % 24).padStart(2, '0') + ':00'));
 
-  const sortedCommits = d3.sort(commits, d => -d.totalLines);
+  const sortedCommits = commits.toSorted((a, b) => b.totalLines - a.totalLines);
 
   const dots = svg.append('g').attr('class', 'dots');
 
@@ -140,7 +139,6 @@ function renderScatterPlot(data, commits) {
       updateTooltipVisibility(false);
     });
 }
-
 
 let data = await loadData();
 let commits = processCommits(data);
