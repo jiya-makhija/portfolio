@@ -205,7 +205,7 @@ function renderLanguageBreakdown(selection) {
     const percent = d3.format('.1~%')(count / lines.length);
     container.innerHTML += `<dt>${lang}</dt><dd>${count} lines (${percent})</dd>`;
   }
-
+}
 function brushed(event) {
   const selection = event.selection;
 
@@ -227,5 +227,4 @@ function isCommitSelected(selection, commit) {
   const cy = yScale(commit.hourFrac);
 
   return cx >= x0 && cx <= x1 && cy >= y0 && cy <= y1;
-}
 }
