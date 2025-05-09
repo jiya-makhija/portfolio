@@ -343,7 +343,7 @@ html.light .tooltip {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
-  color: black;
+  color: inherit;
 }
 
 dl.info {
