@@ -291,7 +291,7 @@ hr {
 }
 
 .gridlines line {
-  stroke: var(--color-neutral-80, #ccc);
+  stroke: var(--color-neutral-80, #7c7878);
   stroke-opacity: 0.3;
 }
 
