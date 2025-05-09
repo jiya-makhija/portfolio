@@ -259,25 +259,25 @@ hr {
   transition: opacity 300ms;
   cursor: pointer;
 }
-
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  margin-block: 2rem;
+  gap: 1em 2em;
+  margin-block: 2em;
+  padding-block: 1em;
+  border-block: 1px solid var(--text-color);
 }
 
 .stats dt {
-  font-size: 0.75rem;
+  font-size: 0.75em;
+  font-weight: 500;
+  color: var(--text-color-muted, #888);
   text-transform: uppercase;
-  color: var(--text-light);
+  letter-spacing: 0.05em;
 }
 
 .stats dd {
-  font-size: 2rem;
+  font-size: 2em;
   margin: 0;
+  font-weight: 600;
 }
