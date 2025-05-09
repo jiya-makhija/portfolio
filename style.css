@@ -303,6 +303,8 @@ circle {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
+  stroke: white;
+  stroke-width: 1px;
 }
 
 circle:hover {
