@@ -378,3 +378,12 @@ circle.selected {
     stroke-dashoffset: -8;
   }
 }
+.projects img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
