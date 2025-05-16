@@ -2,7 +2,7 @@
     {
         "title": "Bikewatching",
         "year": "2025",
-        "image": "images/bikewatching-screenshot.png",
+        "image": "/portfolio/images/bikewatching-screenshot.png",
         "description": "An interactive D3 + Mapbox visualization exploring BlueBike traffic flows and station usage across Boston and Cambridge with time filtering.",
         "url": "https://jiya-makhija.github.io/bikewatching"
       },
