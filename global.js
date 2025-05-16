@@ -107,8 +107,7 @@ export function renderProjects(projects, container, headingLevel = 'h2') {
     const article = document.createElement('article');
 
     const heading = document.createElement(headingLevel);
-    heading.textContent = project.title;
-    
+        
     if (project.url) {
       const link = document.createElement('a');
       link.href = project.url;
