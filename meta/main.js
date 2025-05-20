@@ -265,5 +265,6 @@ function updateTimeDisplay() {
   filteredCommits = filterCommitsByTime(commits, commitMaxTime);
   updateScatterPlot(data, filteredCommits);
   renderCommitInfo(data, filteredCommits);
+  renderFilesSummary(filteredCommits);
 }
 d3.select('#commit-slider').on('input', updateTimeDisplay);
