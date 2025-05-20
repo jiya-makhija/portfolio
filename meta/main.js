@@ -227,3 +227,20 @@ function isCommitSelected(selection, commit) {
 
   return cx >= x0 && cx <= x1 && cy >= y0 && cy <= y1;
 }
+
+let commitProgress = 100;
+
+let timeScale = d3.scaleTime(
+  [d3.min(commits, (d) => d.datetime), d3.max(commits, (d) => d.datetime)],
+  [0, 100]
+);
+let commitMaxTime = timeScale.invert(commitProgress);
+const selectedTime = d3.select('#selectedTime');
+selectedTime.text(timeScale.invert(commitProgress).toLocaleString());
+
+d3.select('#commit-slider')
+  .on('input', function () {
+    commitProgress = +this.value;
+    commitMaxTime = timeScale.invert(commitProgress);
+    selectedTime.text(commitMaxTime.toLocaleString());
+  });
