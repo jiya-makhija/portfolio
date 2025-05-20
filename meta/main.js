@@ -262,8 +262,7 @@ function renderFiles(filteredCommits) {
 
   filesContainer.append('dt').style('grid-column', '1').append('code').text(d => d.name);
   filesContainer.append('dd').style('grid-column', '2').selectAll('div').data(d => d.lines).enter()
-  .append('div').attr('class', 'line').style('display', 'inline-block').style('width', '5px').style('height', '10px')
-  .style('background', d => fileTypeColors(d.type));
+  .append('div').attr('class', 'line').style('background', d => fileTypeColors(d.type));
 }
 
 renderFiles(filteredCommits)
