@@ -143,6 +143,17 @@ function updateScatterPlot(data, commits) {
 
   svg.call(d3.brush().on('start brush end', brushed));
   svg.selectAll('.dots, .overlay ~ *').raise();
+
+  let lines = filteredCommits.flatMap((d) => d.lines);
+  let files = d3.groups(lines, (d) => d.file).map(([name, lines]) => ({ name, lines }));
+  
+  const dl = d3.select('.files');
+  dl.selectAll('div').remove();
+  
+  let filesContainer = d3.select('.files').selectAll('div').data(files).enter().append('div');
+
+  filesContainer.append('dt').style('grid-column', '1').append('code').text(d => d.name);
+  filesContainer.append('dd').style('grid-column', '2').text(d => `${d.lines.length} lines`);
 }
 
 function filterCommitsByTime(commits, commitMaxTime) {
