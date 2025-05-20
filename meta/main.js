@@ -44,7 +44,7 @@ function processCommits(data) {
 }
 
 function renderCommitInfo(data, commits) {
-  const dl = d3.select('#stats').append('dl').attr('class', 'stats');
+  const dl = d3.select('#stats');
   dl.selectAll('*').remove();
   
   dl.append('dt').text('Commits');
