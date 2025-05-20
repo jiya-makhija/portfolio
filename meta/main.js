@@ -158,7 +158,6 @@ let data = await loadData();
 let commits = processCommits(data);
 renderCommitInfo(data, commits);
 updateScatterPlot(data, commits);
-renderFileUnits(filteredCommits);
 
 function renderTooltipContent(commit) {
   const link = document.getElementById('commit-link');
@@ -260,6 +259,7 @@ function renderFiles(filteredCommits) {
   filesContainer.append('dd').style('grid-column', '2').text(d => `${d.lines.length} lines`);
 }
 
+renderFiles(filteredCommits)
 function updateTimeDisplay() {
   commitProgress = +d3.select('#commit-slider').property('value');
   commitMaxTime = timeScale.invert(commitProgress);
