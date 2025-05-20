@@ -158,6 +158,7 @@ let data = await loadData();
 let commits = processCommits(data);
 renderCommitInfo(data, commits);
 updateScatterPlot(data, commits);
+renderFileUnits(filteredCommits);
 
 function renderTooltipContent(commit) {
   const link = document.getElementById('commit-link');
@@ -268,6 +269,5 @@ function updateTimeDisplay() {
   updateScatterPlot(data, filteredCommits);
   renderCommitInfo(data, filteredCommits);
   renderFiles(filteredCommits);
-
 }
 d3.select('#commit-slider').on('input', updateTimeDisplay);
