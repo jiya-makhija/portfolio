@@ -252,6 +252,8 @@ function renderFiles(filteredCommits) {
   let lines = filteredCommits.flatMap((d) => d.lines);
   let files = d3.groups(lines, (d) => d.file).map(([name, lines]) => ({ name, lines }));
   files = d3.sort(files, (d) => -d.lines.length);
+  let fileTypeColors = d3.scaleOrdinal(d3.schemeTableau10);
+
 
   const dl = d3.select('.files');
   dl.selectAll('div').remove();
@@ -259,7 +261,9 @@ function renderFiles(filteredCommits) {
   let filesContainer = dl.selectAll('div').data(files).enter().append('div');
 
   filesContainer.append('dt').style('grid-column', '1').append('code').text(d => d.name);
-  filesContainer.append('dd').style('grid-column', '2').selectAll('div').data(d => d.lines).enter().append('div').attr('class', 'line');
+  filesContainer.append('dd').style('grid-column', '2').selectAll('div').data(d => d.lines).enter()
+  .append('div').attr('class', 'line').style('display', 'inline-block').style('width', '5px').style('height', '10px')
+  .style('background', d => fileTypeColors(d.type));
 }
 
 renderFiles(filteredCommits)
