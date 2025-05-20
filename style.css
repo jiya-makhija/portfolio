@@ -437,12 +437,10 @@ circle.selected {
   padding-top: 0.6em;
   margin-left: 0;
 }
-/*
+
 .line {
   display: flex;
   width: 0.5em;
   aspect-ratio: 1;
-  background: steelblue;
   border-radius: 50%;
 }
-*/
