@@ -50,7 +50,7 @@ function renderCommitInfo(data, commits) {
   } else {
     dl.selectAll('*').remove();
   }
-  
+
   const statsList = d3.select('#stats').select('dl.stats');
   statsList.selectAll('*').remove();
   dl.append('dt').text('Commits');
@@ -251,6 +251,7 @@ selectedTime.text(timeScale.invert(commitProgress).toLocaleString());
 function renderFiles(filteredCommits) {
   let lines = filteredCommits.flatMap((d) => d.lines);
   let files = d3.groups(lines, (d) => d.file).map(([name, lines]) => ({ name, lines }));
+  files = d3.sort(files, (d) => -d.lines.length);
 
   const dl = d3.select('.files');
   dl.selectAll('div').remove();
