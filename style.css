@@ -437,7 +437,7 @@ circle.selected {
   padding-top: 0.6em;
   margin-left: 0;
 }
-
+/*
 .line {
   display: flex;
   width: 0.5em;
@@ -445,3 +445,4 @@ circle.selected {
   background: steelblue;
   border-radius: 50%;
 }
+*/
