@@ -299,10 +299,14 @@ hr {
   display: none;
 }
 
-circle {
+@starting-style circle {
+  to {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
+}
+
+
 }
 
 circle:hover {
@@ -406,3 +410,4 @@ circle.selected {
   font-size: 0.9em;
   white-space: nowrap;
 }
+
