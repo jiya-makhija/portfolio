@@ -256,7 +256,7 @@ function renderFiles(filteredCommits) {
   let filesContainer = dl.selectAll('div').data(files).enter().append('div');
 
   filesContainer.append('dt').style('grid-column', '1').append('code').text(d => d.name);
-  filesContainer.append('dd').style('grid-column', '2').text(d => `${d.lines.length} lines`);
+  filesContainer.append('dd').style('grid-column', '2').selectAll('div').data(d => d.lines).enter().append('div').attr('class', 'line');
 }
 
 renderFiles(filteredCommits)
