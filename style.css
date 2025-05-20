@@ -387,3 +387,15 @@ circle.selected {
   display: block;
   margin: 0 auto;
 }
+
+#slider-container {
+  display: flex;
+  align-items: baseline;
+  gap: 1em;
+  margin-top: 1em;
+  width: 80%;
+}
+
+#selectedTime {
+  margin-left: auto;
+}
