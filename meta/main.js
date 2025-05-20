@@ -148,17 +148,6 @@ function updateScatterPlot(data, commits) {
 
   svg.call(d3.brush().on('start brush end', brushed));
   svg.selectAll('.dots, .overlay ~ *').raise();
-
-  let lines = filteredCommits.flatMap((d) => d.lines);
-  let files = d3.groups(lines, (d) => d.file).map(([name, lines]) => ({ name, lines }));
-  
-  const dl = d3.select('.files');
-  dl.selectAll('div').remove();
-  
-  let filesContainer = d3.select('.files').selectAll('div').data(files).enter().append('div');
-
-  filesContainer.append('dt').style('grid-column', '1').append('code').text(d => d.name);
-  filesContainer.append('dd').style('grid-column', '2').text(d => `${d.lines.length} lines`);
 }
 
 function filterCommitsByTime(commits, commitMaxTime) {
@@ -257,6 +246,19 @@ let commitMaxTime = timeScale.invert(commitProgress);
 const selectedTime = d3.select('#selectedTime');
 selectedTime.text(timeScale.invert(commitProgress).toLocaleString());
 
+function renderFiles(filteredCommits) {
+  let lines = filteredCommits.flatMap((d) => d.lines);
+  let files = d3.groups(lines, (d) => d.file).map(([name, lines]) => ({ name, lines }));
+
+  const dl = d3.select('.files');
+  dl.selectAll('div').remove();
+
+  let filesContainer = dl.selectAll('div').data(files).enter().append('div');
+
+  filesContainer.append('dt').style('grid-column', '1').append('code').text(d => d.name);
+  filesContainer.append('dd').style('grid-column', '2').text(d => `${d.lines.length} lines`);
+}
+
 function updateTimeDisplay() {
   commitProgress = +d3.select('#commit-slider').property('value');
   commitMaxTime = timeScale.invert(commitProgress);
@@ -265,6 +267,7 @@ function updateTimeDisplay() {
   filteredCommits = filterCommitsByTime(commits, commitMaxTime);
   updateScatterPlot(data, filteredCommits);
   renderCommitInfo(data, filteredCommits);
-  renderFilesSummary(filteredCommits);
+  renderFiles(filteredCommits);
+
 }
 d3.select('#commit-slider').on('input', updateTimeDisplay);
