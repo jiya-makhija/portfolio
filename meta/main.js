@@ -51,6 +51,8 @@ function renderCommitInfo(data, commits) {
     dl.selectAll('*').remove();
   }
   
+  const statsList = d3.select('#stats').select('dl.stats');
+  statsList.selectAll('*').remove();
   dl.append('dt').text('Commits');
   dl.append('dd').text(commits.length);
 
