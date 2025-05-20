@@ -13,6 +13,11 @@
 
   <div id="stats"></div>
   <h2>Commits by time of day</h2>
+  <div id="slider-container">
+    <label for="commit-slider">Show commits until:</label>
+    <input id="commit-slider" type="range" min="0" max="100" value="100" />
+    <time id="selectedTime" style="margin-left: auto;"></time>
+  </div>
   <div id="chart"></div>
   <p id="selection-count">No commits selected</p>
   <dl id="language-breakdown" class="stats"></dl>
@@ -33,6 +38,7 @@
     <dt>Lines Edited</dt>
     <dd id="commit-lines"></dd>
   </dl>
+
   <script type="module" src="./main.js"></script>
 </body>
 </html>
