@@ -301,7 +301,7 @@ hr {
 
 @starting-style circle {
   to {
-  transition: 200ms;
+    transition: all 200ms, r calc(var(--r) * 100ms);;
   transform-origin: center;
   transform-box: fill-box;
 }
