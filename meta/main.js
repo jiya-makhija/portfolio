@@ -158,8 +158,6 @@ function renderScatterPlot(data, commits) {
 }
 
 function updateScatterPlot(data, commits) {
-  d3.select('svg').remove();
-
   const width = 1000;
   const height = 600;
   const margin = { top: 10, right: 10, bottom: 30, left: 40 };
