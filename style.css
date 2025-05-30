@@ -446,24 +446,21 @@ circle.selected {
   padding-top: 0.6em;
   margin-left: 0;
 }
-#scrolly-1 {
-  position: relative;
-  display: flex;
-  gap: 1rem;
 
-  > * {
-    flex: 1;
-  }
+#scrolly-1 {
+  display: flex !important;
+  gap: 2rem !important;
 }
 
 #scatter-story {
-  position: relative;
+  flex: 1 !important;
+  background: rgba(255,0,0,0.1) !important; /* Red tint to see it */
 }
 
 #scatter-plot {
-  position: sticky;
-  top: 0;
-  left: 0;
-  bottom: auto;
-  height: 50vh;
+  flex: 1 !important;
+  position: sticky !important;
+  top: 1rem !important;
+  height: 80vh !important;
+  background: rgba(0,255,0,0.1) !important; /* Green tint to see it */
 }
