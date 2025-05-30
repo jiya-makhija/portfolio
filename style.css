@@ -447,20 +447,59 @@ circle.selected {
   margin-left: 0;
 }
 
+/* Scrollytelling layout */
 #scrolly-1 {
+  position: relative;
   display: flex !important;
-  gap: 2rem !important;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+#scrolly-1 > * {
+  flex: 1;
 }
 
 #scatter-story {
-  flex: 1 !important;
-  background: rgba(255,0,0,0.1) !important; /* Red tint to see it */
+  position: relative;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 #scatter-plot {
-  flex: 1 !important;
-  position: sticky !important;
-  top: 1rem !important;
-  height: 80vh !important;
-  background: rgba(0,255,0,0.1) !important; /* Green tint to see it */
+  position: sticky;
+  top: 1rem;
+  height: 80vh;
+  overflow: hidden;
+}
+
+#scatter-plot h2 {
+  margin-top: 0;
+}
+
+.step {
+  padding: 2rem;
+  min-height: 50vh;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.step h3 {
+  margin-top: 0;
+  color: #4a9eff;
+}
+
+.step p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.step a {
+  color: #4a9eff;
+  text-decoration: none;
+}
+
+.step a:hover {
+  text-decoration: underline;
 }
