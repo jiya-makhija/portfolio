@@ -409,12 +409,3 @@ scroller
   })
   .onStepEnter(onStepEnter);
 
-console.log('scatter-story:', document.getElementById('scatter-story'));
-console.log('scatter-plot:', document.getElementById('scatter-plot'));  
-console.log('chart:', document.getElementById('chart'));
-
-// Check if steps were created
-console.log('Number of steps:', document.querySelectorAll('.step').length);
-
-// Check if circles exist
-console.log('Number of circles:', d3.selectAll('circle').size());
