@@ -475,31 +475,3 @@ circle.selected {
 #scatter-plot h2 {
   margin-top: 0;
 }
-
-.step {
-  padding: 2rem;
-  min-height: 50vh;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  margin-bottom: 2rem;
-}
-
-.step h3 {
-  margin-top: 0;
-  color: #4a9eff;
-}
-
-.step p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.step a {
-  color: #4a9eff;
-  text-decoration: none;
-}
-
-.step a:hover {
-  text-decoration: underline;
-}
