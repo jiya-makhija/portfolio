@@ -459,6 +459,7 @@ circle.selected {
 
 #scatter-story {
   position: relative;
+  padding-bottom: 200px; /* Space for the sticky plot */
 }
 
 #scatter-plot {
