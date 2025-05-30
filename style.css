@@ -480,7 +480,7 @@ circle.selected {
 .step {
   padding: 2rem;
   margin-bottom: 1rem;
-  min-height: 35vh;}
+  min-height: 15vh;}
 
 
 .step:last-child {
