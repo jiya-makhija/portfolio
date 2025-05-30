@@ -97,7 +97,7 @@ function renderScatterPlot(data, commits) {
     .attr('viewBox', `0 0 ${width} ${height}`)
     .style('overflow', 'visible');
     const xAxis = d3.axisBottom(xScale);
-  const yAxis = d3.axisLeft(yScale);
+    const yAxis = d3.axisLeft(yScale);
 
   xScale = d3.scaleTime()
     .domain(d3.extent(commits, d => d.datetime))
