@@ -447,31 +447,24 @@ circle.selected {
   margin-left: 0;
 }
 
-/* Scrollytelling layout */
 #scrolly-1 {
   position: relative;
-  display: flex !important;
-  gap: 2rem;
-  margin: 2rem 0;
-}
+  display: flex;
+  gap: 1rem;
 
-#scrolly-1 > * {
-  flex: 1;
+  > * {
+    flex: 1;
+  }
 }
 
 #scatter-story {
   position: relative;
-  max-height: 100vh;
-  overflow-y: auto;
 }
 
 #scatter-plot {
   position: sticky;
-  top: 1rem;
-  height: 80vh;
-  overflow: hidden;
-}
-
-#scatter-plot h2 {
-  margin-top: 0;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
 }
