@@ -469,8 +469,14 @@ circle.selected {
   height: 50vh;
 }
 #language-breakdown {
-  font-size: 1rem; 
-  line-height: 1.2;
+  position: relative; 
+  font-size: 0.8rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: rgba(42, 42, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+ 
 }
 
 #language-breakdown dt,
