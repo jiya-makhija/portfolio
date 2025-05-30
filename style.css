@@ -481,3 +481,8 @@ circle.selected {
   padding: 2rem;
   margin-bottom: 1rem;
   min-height: 35vh;}
+
+
+.step:last-child {
+  margin-bottom: 2rem;
+}
