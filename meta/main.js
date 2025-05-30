@@ -391,7 +391,7 @@ d3.select('#scatter-story')
   );
 
 function onStepEnter(response) {
-  console.log(response);
+  console.log(response.element.__data__.datetime);
   
   const commit = response.element.__data__;
   
