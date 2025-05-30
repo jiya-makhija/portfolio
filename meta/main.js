@@ -34,7 +34,7 @@ function processCommits(data) {
         datetime,
         hourFrac: datetime.getHours() + datetime.getMinutes() / 60,
         totalLines: lines.length,
-      }.sort((a, b) => a.datetime - b.datetime);
+      };
 
       Object.defineProperty(ret, 'lines', {
         value: lines,
@@ -44,7 +44,7 @@ function processCommits(data) {
       });
 
       return ret;
-    });
+    }).sort((a, b) => a.datetime - b.datetime);
 }
 
 function renderCommitInfo(data, commits) {
