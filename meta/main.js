@@ -34,7 +34,7 @@ function processCommits(data) {
         datetime,
         hourFrac: datetime.getHours() + datetime.getMinutes() / 60,
         totalLines: lines.length,
-      };
+      }.sort((a, b) => a.datetime - b.datetime);
 
       Object.defineProperty(ret, 'lines', {
         value: lines,
@@ -389,3 +389,22 @@ d3.select('#scatter-story')
 		Then I looked over all I had made, and I saw that it was very good.
 	`,
   );
+
+function onStepEnter(response) {
+  console.log(response);
+  
+  const commit = response.element.__data__;
+  
+  const commitMaxTime = commit.datetime;
+  filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
+  updateScatterPlot(data, filteredCommits);
+  renderCommitInfo(data, filteredCommits);
+  renderFiles(filteredCommits);
+}
+const scroller = scrollama();
+scroller
+  .setup({
+    container: '#scrolly-1',
+    step: '#scrolly-1 .step',
+  })
+  .onStepEnter(onStepEnter);
