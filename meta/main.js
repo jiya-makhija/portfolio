@@ -96,6 +96,8 @@ function renderScatterPlot(data, commits) {
     .append('svg')
     .attr('viewBox', `0 0 ${width} ${height}`)
     .style('overflow', 'visible');
+    const xAxis = d3.axisBottom(xScale);
+  const yAxis = d3.axisLeft(yScale);
 
   xScale = d3.scaleTime()
     .domain(d3.extent(commits, d => d.datetime))
@@ -107,7 +109,7 @@ function renderScatterPlot(data, commits) {
     .range([usableArea.bottom, usableArea.top]);
 
   const [minLines, maxLines] = d3.extent(commits, d => d.totalLines);
-  const rScale = d3.scaleSqrt().domain([0, maxLines]).range([6, 40]);
+  const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]);
 
   svg.append('g')
     .attr('class', 'gridlines')
@@ -214,6 +216,7 @@ function filterCommitsByTime(commits, commitMaxTime) {
 let data = await loadData();
 let commits = processCommits(data);
 renderCommitInfo(data, commits);
+renderScatterPlot(data, commits);
 
 function renderTooltipContent(commit) {
   const link = document.getElementById('commit-link');
