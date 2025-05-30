@@ -468,3 +468,12 @@ circle.selected {
   bottom: auto;
   height: 50vh;
 }
+#language-breakdown {
+  font-size: 0.8rem; 
+  line-height: 1.2;
+}
+
+#language-breakdown dt,
+#language-breakdown dd {
+  font-size: 0.75rem; 
+}
