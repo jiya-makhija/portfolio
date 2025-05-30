@@ -446,3 +446,9 @@ circle.selected {
   aspect-ratio: 1;
   border-radius: 50%;
 }
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
