@@ -364,9 +364,3 @@ d3.select('#commit-slider').on('input', onTimeSliderChange);
 
 
 window.timeScale = timeScale;
-let lines = filteredCommits.flatMap((d) => d.lines);
-let files = d3
-  .groups(lines, (d) => d.file)
-  .map(([name, lines]) => {
-    return { name, lines };
-  });
