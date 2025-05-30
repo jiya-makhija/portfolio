@@ -300,7 +300,7 @@ hr {
 }
 
 circle {
-  transition: all 200ms, r calc(var(--r) * 100ms);;
+  transition: all 200ms ease-out, r calc(var(--r) * 100ms);;
   transform-origin: center;
   transform-box: fill-box;
 }
