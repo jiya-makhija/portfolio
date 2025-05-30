@@ -428,8 +428,15 @@ circle.selected {
 .files dt {
   grid-column: 1;
 }
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color, steelblue);
+  border-radius: 50%;
+}
 
-.files dd {
+#files dd {
   grid-column: 2;
   display: flex;
   flex-wrap: wrap;
@@ -438,17 +445,4 @@ circle.selected {
   gap: 0.15em;
   padding-top: 0.6em;
   margin-left: 0;
-}
-
-.line {
-  display: flex;
-  width: 0.5em;
-  aspect-ratio: 1;
-  border-radius: 50%;
-}
-.loc {
-  display: flex;
-  width: 0.5em;
-  aspect-ratio: 1;
-  border-radius: 50%;
 }
