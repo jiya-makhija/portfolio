@@ -1,6 +1,6 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 let xScale, yScale, rScale;
-let filteredCommits = commits;
+let filteredCommits = [];
 
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
