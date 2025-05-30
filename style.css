@@ -473,8 +473,6 @@ circle.selected {
   font-size: 0.8rem;
   padding: 1rem;
   margin: 1rem 0;
-  background: rgba(42, 42, 42, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
  
 }
