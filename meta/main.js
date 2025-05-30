@@ -214,7 +214,6 @@ function filterCommitsByTime(commits, commitMaxTime) {
 let data = await loadData();
 let commits = processCommits(data);
 renderCommitInfo(data, commits);
-renderScatterPlot(data, commits);
 
 function renderTooltipContent(commit) {
   const link = document.getElementById('commit-link');
@@ -313,7 +312,20 @@ function renderFiles(filteredCommits) {
   const dl = d3.select('.files');
   dl.selectAll('div').remove();
 
-  let filesContainer = dl.selectAll('div').data(files).enter().append('div');
+  let filesContainer = d3
+  .select('#files')
+  .selectAll('div')
+  .data(files, (d) => d.name)
+  .join(
+    // This code only runs when the div is initially rendered
+    (enter) =>
+      enter.append('div').call((div) => {
+        div.append('dt').append('code');
+        div.append('dd');
+      }),
+  );
+  filesContainer.select('dt > code').text((d) => d.name);
+  filesContainer.select('dd').text((d) => `${d.lines.length} lines`);
 
   filesContainer.append('dt').style('grid-column', '1').append('code').text(d => d.name);
   filesContainer.append('dd').style('grid-column', '2').selectAll('div').data(d => d.lines).enter()
