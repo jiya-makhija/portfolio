@@ -294,9 +294,14 @@ function isCommitSelected(selection, commit) {
 
 function renderFiles(filteredCommits) {
   let lines = filteredCommits.flatMap((d) => d.lines);
-  let files = d3.groups(lines, (d) => d.file).map(([name, lines]) => ({ name, lines }));
-  files = d3.sort(files, (d) => -d.lines.length);
-  let fileTypeColors = d3.scaleOrdinal(d3.schemeTableau10);
+  let files = d3
+  .groups(lines, (d) => d.file)
+  .map(([name, lines]) => {
+    return { name, lines };
+  })
+  .sort((a, b) => b.lines.length - a.lines.length);
+  let colors = d3.scaleOrdinal(d3.schemeTableau10);
+
 
   let filesContainer = d3
     .select('#files')
@@ -308,7 +313,8 @@ function renderFiles(filteredCommits) {
           div.append('dt').append('code');
           div.append('dd');
         }),
-    );
+        
+    ).attr('style', (d) => `--color: ${colors(d.type)}`);;
 
   filesContainer.select('dt > code').text((d) => d.name);
   
@@ -317,7 +323,7 @@ function renderFiles(filteredCommits) {
     .data(d => d.lines)
     .join('div')
     .attr('class', 'loc')
-    .style('background', d => fileTypeColors(d.type));
+    .style('background', d => colors(d.type));
 }
 
 function onTimeSliderChange() {
@@ -340,25 +346,27 @@ data = await loadData();
 commits = processCommits(data);
 filteredCommits = commits;
 
-// Set up time scale
 const timeScale = d3.scaleTime(
   [d3.min(commits, (d) => d.datetime), d3.max(commits, (d) => d.datetime)],
   [0, 100]
 );
 
-// Initialize UI
 const selectedTime = d3.select('#selectedTime');
 if (!selectedTime.empty()) {
   selectedTime.text(timeScale.invert(100).toLocaleString());
 }
 
-// Render initial visualization
 renderCommitInfo(data, commits);
 renderScatterPlot(data, commits);
 renderFiles(filteredCommits);
 
-// Set up slider event listener
 d3.select('#commit-slider').on('input', onTimeSliderChange);
 
-// Make timeScale global for slider function
+
 window.timeScale = timeScale;
+let lines = filteredCommits.flatMap((d) => d.lines);
+let files = d3
+  .groups(lines, (d) => d.file)
+  .map(([name, lines]) => {
+    return { name, lines };
+  });
